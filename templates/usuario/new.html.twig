@@ -15,7 +15,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Portifolio</a>
+                    <a class="nav-link" href="projetos">Portifolio</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,8 +30,8 @@
                 </li>
                 </ul>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" style="background-color:#000010;color:white;" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
         </div>
@@ -48,5 +48,5 @@
 
     {{ include('usuario/_form.html.twig') }}
 
-    <a class="btn btn-primary mt-1" href="{{ path('app_usuario_index') }}">back to list</a>
+    <a class="btn btn-dark mt-1 ms-2" href="{{ path('app_usuario_index') }}">Voltar</a>
 {% endblock %}

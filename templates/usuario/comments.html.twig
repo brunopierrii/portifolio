@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Usuario index{% endblock %}
+{% block title %}CRUD!{% endblock %}
 
 {% block body %}
     <nav class="navbar col-12 fixed-top navbar-expand-lg navbar-dark bg-dark" style="z-index: index 999;">
@@ -15,7 +15,7 @@
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Portifolio</a>
+                        <a class="nav-link" href="/projetos">Projetos</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,8 +30,8 @@
                     </li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-light" type="submit">Search</button>
+                        <input class="form-control me-2 " type="search" style="background-color:#000010;color:white;" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
                 </div>
             </div>
@@ -45,32 +45,30 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
+                <th>Nome</th>
                 <th>Email</th>
-                <th>Comment</th>
-                <th>actions</th>
+                <th>Comentário</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
         {% for usuario in usuarios %}
             <tr>
-                <td>{{ usuario.id }}</td>
                 <td>{{ usuario.name }}</td>
                 <td>{{ usuario.email }}</td>
                 <td>{{ usuario.comment }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{ path('app_usuario_show', {'id': usuario.id}) }}">show</a>
-                    <a class="btn btn-primary" href="{{ path('app_usuario_edit', {'id': usuario.id}) }}">edit</a>
+                    <a class="btn btn-dark" href="{{ path('app_usuario_show', {'id': usuario.id}) }}">Exibir</a>
+                    <a class="btn btn-dark" href="{{ path('app_usuario_edit', {'id': usuario.id}) }}">Editar</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Não há comentários</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a class="btn btn-primary" href="{{ path('app_usuario_new') }}">Create new</a>
+    <a class="btn btn-dark ms-2" href="{{ path('app_usuario_new') }}">Crie um novo comentário</a>
 {% endblock %}

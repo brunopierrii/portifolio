@@ -20,7 +20,7 @@ class UsuarioController extends AbstractController
      */
     public function index(UsuarioRepository $usuarioRepository): Response
     {
-        return $this->render('usuario/index.html.twig', [
+        return $this->render('usuario/comments.html.twig', [
             'usuarios' => $usuarioRepository->findAll(),
         ]);
     }
@@ -51,7 +51,7 @@ class UsuarioController extends AbstractController
     public function show(Usuario $usuario): Response
     {
         return $this->render('usuario/show.html.twig', [
-            'usuario' => $usuario,
+            'usuario' => $usuario
         ]);
     }
 
