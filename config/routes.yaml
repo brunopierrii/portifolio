@@ -4,5 +4,13 @@ home:
 
 
 crud:
-  path: /crud
+  path: /projetos/crud
   controller: App\Controller\UsuarioController::index
+
+projetos:
+   path: /projetos
+   controller: App\ControllerProjetosController::index
+
+calculadora:
+   path: /projetos/calculadora
+   controller: App\Controller\ProjetosController::calculadora
