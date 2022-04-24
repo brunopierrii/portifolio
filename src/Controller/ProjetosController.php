@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use PhpParser\Node\Stmt\Else_;
+use PhpParser\Node\Stmt\Return_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -48,5 +49,15 @@ class ProjetosController extends AbstractController
             'resultado' => $resultado
         ]);
 
+    }
+
+    /**
+     * @Route("/projetos/agenda", name="app_agenda")
+     */
+    public function agenda()
+    {
+        return $this->render('projetos/agenda.html.twig',[
+            'agenda' => 'Agenda'
+        ]);
     }
 }

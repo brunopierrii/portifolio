@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Projetos{% endblock %}
+{% block title %}Calendário{% endblock %}
 
 {% block body %}
 <nav class="navbar col-12 fixed-top navbar-expand-lg navbar-dark bg-dark" style="z-index: index 999;">
@@ -41,33 +41,7 @@
     <br>
     <br>
 
-    <div class="card-group">
-        <div class="card" style="width: 18rem;">
-        <img src="../img/crud.png" class="card-img-top" alt="crud">
-        <div class="card-body">
-            <h5 class="card-title">CRUD</h5>
-            <p class="card-text">Aplicação CRUD</p>
-            <a href="/projetos/crud" class="btn btn-dark">Ir</a>
-        </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-        <img src="../img/calculadora.jpg" class="card-img-top" alt="calculadora">
-        <div class="card-body">
-            <h5 class="card-title">Calculadora</h5>
-            <p class="card-text">Aplicação calculadora</p>
-            <a href="/projetos/calculadora" class="btn btn-dark">Ir</a>
-        </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-        <img src="../img/agenda.jpg" class="card-img-top" alt="">
-        <div class="card-body">
-            <h5 class="card-title">Agenda</h5>
-            <p class="card-text">Aplicação Agenda</p>
-            <a href="/projetos/agenda" class="btn btn-dark">Ir</a>
-        </div>
-        </div>
-    </div>
     
+    <p>{{ agenda }}</p>
+
 {% endblock %}
