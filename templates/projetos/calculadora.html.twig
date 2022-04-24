@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Usuario{% endblock %}
+{% block title %}Calculadora{% endblock %}
 
 {% block body %}
-    <nav class="navbar col-12 fixed-top navbar-expand-lg navbar-dark bg-dark" style="z-index: index 999;">
+<nav class="navbar col-12 fixed-top navbar-expand-lg navbar-dark bg-dark" style="z-index: index 999;">
         <div class="container-fluid col-11 m-auto">
             <a class="navbar-brand" href="/">BrunoDEV_'</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,10 +12,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="projetos">Portifolio</a>
+                    <a class="nav-link" href="/projetos">Projetos</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,17 +36,29 @@
             </div>
         </div>
     </nav>
-        <br>
-        <br>
-        <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-    <h2 class="ms-2">Teste nossa aplicação, criando um novo comentário:</h2>
+    <form class="form-control" action="/projetos/calculadora" method="POST">
+        <label>Primeiro número:</label>
+        <input type="text" name="num1"><br><br>
 
-    <p class="ms-2">
-        Podendo ver seu comentário, editá-lo, ou até mesmo excluí-lo. Assim, passando por todo funcionamento, <br>e conceito de uma aplicação crud.
-    </p>
+        <label>Segundo número:</label>
+        <input type="text" name="num2"><br><br>
 
-    {{ include('usuario/_form.html.twig') }}
+        <label>Operacão desejada:</label>
+        <select name="operacao">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">X</option>
+            <option value="/">/</option>
+        </select>
+        <input type="submit" class="btn btn-dark" value="Calcular">
+    </form>
+    <hr>
+    <p>{{ resultado }}</p>
 
-    <a class="btn btn-dark mt-1 ms-2" href="{{ path('app_usuario_index') }}">Voltar</a>
+    
 {% endblock %}

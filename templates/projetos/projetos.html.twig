@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Usuario{% endblock %}
+{% block title %}Projetos{% endblock %}
 
 {% block body %}
-    <nav class="navbar col-12 fixed-top navbar-expand-lg navbar-dark bg-dark" style="z-index: index 999;">
+<nav class="navbar col-12 fixed-top navbar-expand-lg navbar-dark bg-dark" style="z-index: index 999;">
         <div class="container-fluid col-11 m-auto">
             <a class="navbar-brand" href="/">BrunoDEV_'</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,10 +12,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="projetos">Portifolio</a>
+                    <a class="nav-link" href="/projetos">Projetos</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,17 +36,38 @@
             </div>
         </div>
     </nav>
-        <br>
-        <br>
-        <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-    <h2 class="ms-2">Teste nossa aplicação, criando um novo comentário:</h2>
+    <div class="card-group">
+        <div class="card" style="width: 18rem;">
+        <img src="../img/crud.png" class="card-img-top" alt="crud">
+        <div class="card-body">
+            <h5 class="card-title">CRUD</h5>
+            <p class="card-text">Aplicação CRUD</p>
+            <a href="/projetos/crud" class="btn btn-dark">Ir</a>
+        </div>
+        </div>
 
-    <p class="ms-2">
-        Podendo ver seu comentário, editá-lo, ou até mesmo excluí-lo. Assim, passando por todo funcionamento, <br>e conceito de uma aplicação crud.
-    </p>
+        <div class="card" style="width: 18rem;">
+        <img src="../img/calculadora.jpg" class="card-img-top" alt="calculadora">
+        <div class="card-body">
+            <h5 class="card-title">Calculadora</h5>
+            <p class="card-text">Aplicação calculadora</p>
+            <a href="/projetos/calculadora" class="btn btn-dark">Ir</a>
+        </div>
+        </div>
 
-    {{ include('usuario/_form.html.twig') }}
-
-    <a class="btn btn-dark mt-1 ms-2" href="{{ path('app_usuario_index') }}">Voltar</a>
+        <div class="card" style="width: 18rem;">
+        <img src="../img/agenda.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+            <h5 class="card-title">Agenda</h5>
+            <p class="card-text">Aplicação Agenda</p>
+            <a href="/projetos/agenda" class="btn btn-dark">Ir</a>
+        </div>
+        </div>
+    </div>
+    
 {% endblock %}
