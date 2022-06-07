@@ -55,9 +55,11 @@ class ProjetosController extends AbstractController
      * @Route("/projetos/agenda", name="app_agenda")
      */
     public function agenda()
-    {
+    {   
+        $firstDayNextMonth = date('Y-m-d', strtotime('first day of next month'));
+
         return $this->render('projetos/agenda.html.twig',[
-            'agenda' => 'Agenda'
+            'agenda' => $firstDayNextMonth
         ]);
     }
 }

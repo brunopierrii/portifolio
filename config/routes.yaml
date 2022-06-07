@@ -9,7 +9,7 @@ crud:
 
 projetos:
    path: /projetos
-   controller: App\ControllerProjetosController::index
+   controller: App\Controller\ProjetosController::index
 
 calculadora:
    path: /projetos/calculadora

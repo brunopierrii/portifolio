@@ -3,7 +3,45 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<form method="post">
+<nav class="navbar col-12 fixed-top navbar-expand-lg navbar-dark bg-dark" style="z-index: index 999;">
+        <div class="container-fluid col-11 m-auto">
+          <a class="navbar-brand" href="/">BrunoDEV_'</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/projetos">Projetos</a>
+              </li>
+              <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Fale Comigo
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Contatos</a></li>
+                            <li><a class="dropdown-item" href="#"><Datag>Curiosidades</Datag></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Deixe sua dúvida aqui</a></li>
+                        </ul>
+                    </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" style="background-color:#000010;color:white;" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+
+<form method="post" class="">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -14,11 +52,17 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    <h1 class="h3 mb-3 ms-2 font-weight-normal">Faça Login:</h1>
+    
+    <div class="form-outline mb-4 ms-2 ">
+      <label class="form-label" for="inputEmail">Email</label>
+      <input type="email" value="{{ last_username }}" name="email" id="inputEmail" style="width: 200px" class="form-control" autocomplete="email" required autofocus>
+    </div>
+
+    <div class="form-outline mb-4 ms-2">
+      <label class="form-label" for="inputPassword">Password</label>
+      <input type="password" name="password" id="inputPassword" style="width: 200px" class="form-control" autocomplete="current-password" required>
+    </div>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
@@ -35,8 +79,8 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
+    <button class="btn btn-primary ms-2" type="submit">Entrar</button>
+
+    <a class="btn btn-primary ms-2" href="/register">Registrar-se</a>
 </form>
 {% endblock %}
