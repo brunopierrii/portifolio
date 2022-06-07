@@ -3,16 +3,64 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
+<nav class="navbar col-12 fixed-top navbar-expand-lg navbar-dark bg-dark" style="z-index: index 999;">
+        <div class="container-fluid col-11 m-auto">
+          <a class="navbar-brand" href="/">BrunoDEV_'</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/projetos">Projetos</a>
+              </li>
+              <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Fale Comigo
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Contatos</a></li>
+                            <li><a class="dropdown-item" href="#"><Datag>Curiosidades</Datag></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Deixe sua dúvida aqui</a></li>
+                        </ul>
+                    </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" style="background-color:#000010;color:white;" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container overflow-hidden">
     <h1>Register</h1>
 
     {{ form_start(registrationForm) }}
+        
         {{ form_row(registrationForm.name) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        <br>
 
-        <button type="submit" class="btn">Register</button>
+        {{ form_row(registrationForm.email) }}
+        <br>
+
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Senha'
+        }) }}
+        <br>
+
+        {{ form_row(registrationForm.termos_de_uso) }}
+
+        <button type="submit" class="btn btn-primary mt-2">Register</button>
     {{ form_end(registrationForm) }}
+    </div>
+
 {% endblock %}
